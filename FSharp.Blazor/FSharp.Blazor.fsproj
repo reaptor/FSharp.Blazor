@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="TaskBuilder.fs" />
+        <Compile Include="Node.fs" />
+        <Compile Include="Html.fs" />
+        <Compile Include="Render.fs" />
+        <Compile Include="Component.fs" />
+        <Compile Include="App.fs" />
+        <Compile Include="Router.fs" />
+        <Compile Include="FSharpBlazorMiddleware.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+    </ItemGroup>
+
+</Project>

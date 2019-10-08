@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Components\Counter.fs" />
+    <Compile Include="Components\Index.fs" />
+    <Compile Include="Components\404.fs" />
+    <Compile Include="Components\Routes.fs" />
+    <Compile Include="Components\Host.fs" />
+    <Compile Include="Startup.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FSharp.Blazor\FSharp.Blazor.fsproj" />
+  </ItemGroup>
+
+</Project>
