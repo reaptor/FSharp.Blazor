@@ -1,10 +1,10 @@
 namespace FSharp.Blazor.Example.Components
 
+open Microsoft.AspNetCore.Components
 open FSharp.Blazor
 open FSharp.Blazor.Html
-open Microsoft.AspNetCore.Components
 
-[<Route("foo")>]
+[<Route("/")>]
 type Index() =
     inherit Component()
 

@@ -15,7 +15,7 @@ type Host() =
     override this.Render () =
         html [] [
             body [] [
-                app<Routes> this.HttpContextAccessor.HttpContext
+                app<App> this.HttpContextAccessor.HttpContext
                 script [ attr.src "_framework/blazor.server.js" ] []
             ]
         ]

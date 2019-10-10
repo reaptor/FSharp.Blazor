@@ -1,8 +1,10 @@
 namespace FSharp.Blazor.Example.Components
 
+open Microsoft.AspNetCore.Components
 open FSharp.Blazor.Html
 open FSharp.Blazor
 
+[<Route("/counter")>]
 type Counter() =
     inherit Component()
 
