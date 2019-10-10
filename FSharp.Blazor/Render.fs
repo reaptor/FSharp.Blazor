@@ -162,6 +162,10 @@ and renderAttrs currentComp builder sequence attrs =
         ||> List.fold (fun (sequence, ref, key) attr ->
             match attr with
             | Attr (name, value) ->
+//                if value :? MulticastDelegate
+//                then
+//                    builder.AddAttribute(sequence, name, value :?> MulticastDelegate)
+//                else
                 builder.AddAttribute(sequence, name, value)
                 (sequence + 1, ref, key)
             | Attrs attrs ->
