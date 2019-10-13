@@ -1,4 +1,4 @@
-namespace FSharp.Blazor.Example.Shared
+namespace FSharp.Blazor.Template.Shared
 
 open FSharp.Blazor.Html
 open FSharp.Blazor
@@ -17,7 +17,7 @@ type NavMenu() =
 
     override this.Render () = [
         div [ attr.``class`` "top-row pl-4 navbar navbar-dark" ] [
-            a [ attr.``class`` "navbar-brand"; attr.href "/" ] [ text "MyApp" ]
+            a [ attr.``class`` "navbar-brand"; attr.href "/" ] [ text "FSharp.Blazor.Template" ]
             button [ attr.``class`` "navbar-toggler"; on.click toggleNavMenu ] [
                 span [ attr.``class`` "navbar-toggler-icon" ] []
             ]

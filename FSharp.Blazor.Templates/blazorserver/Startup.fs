@@ -1,12 +1,12 @@
-namespace FSharp.Blazor.Example
+namespace FSharp.Blazor.Template
 
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
-open FSharp.Blazor.Example.Components
 open FSharp.Blazor
-open FSharp.Blazor.Example.Data
+open FSharp.Blazor.Template
+open FSharp.Blazor.Template.Data
 
 type Startup () =
 
@@ -30,5 +30,5 @@ type Startup () =
             endpoints.MapBlazorHub() |> ignore
             ) |> ignore
 
-        app.UseFSharpBlazorServer<_Host>() |> ignore
+        app.UseFSharpBlazorServer<Host>() |> ignore
 

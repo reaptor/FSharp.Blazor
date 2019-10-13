@@ -1,10 +1,10 @@
-namespace FSharp.Blazor.Example.Pages
+namespace FSharp.Blazor.Template.Pages
 
 open Microsoft.AspNetCore.Components
 open FSharp.Blazor
 open FSharp.Blazor.Html
 open FSharp.Blazor.Routing
-open FSharp.Blazor.Example.Shared
+open FSharp.Blazor.Template.Shared
 
 type App() =
     inherit Component()

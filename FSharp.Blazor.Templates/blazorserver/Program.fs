@@ -1,4 +1,4 @@
-namespace FSharp.Blazor.Example
+namespace FSharp.Blazor.Template
 
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Hosting

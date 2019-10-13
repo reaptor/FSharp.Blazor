@@ -1,4 +1,4 @@
-namespace FSharp.Blazor.Example.Pages
+namespace FSharp.Blazor.Template.Pages
 
 open Microsoft.AspNetCore.Components
 open FSharp.Blazor

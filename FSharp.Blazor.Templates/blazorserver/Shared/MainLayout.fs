@@ -1,4 +1,4 @@
-namespace FSharp.Blazor.Example.Shared
+namespace FSharp.Blazor.Template.Shared
 
 open FSharp.Blazor.Html
 open FSharp.Blazor

@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Kristoffer Löfberg",
+    "classifications": [ "Web", "Blazor" ],
+    "identity": "FSharp.Blazor.Template",
+    "name": "Blazor Server App",
+    "shortName": "blazorserver",
+    "sourceName": "FSharp.Blazor.Template", 
+    "preferNameDirectory": true,
+    "tags": {
+        "language": "F#",
+        "type":"project"
+    }
+}

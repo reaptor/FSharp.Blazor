@@ -1,8 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# 
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Blazor", "FSharp.Blazor\FSharp.Blazor.fsproj", "{625EBA4A-3565-4D44-8814-FC77DAA37461}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Blazor.Example", "FSharp.Blazor.Example\FSharp.Blazor.Example.fsproj", "{C410E5A2-9F6D-44AC-A13C-6001278C1A7C}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "blazorserver", "FSharp.Blazor.Templates\blazorserver\blazorserver.fsproj", "{C410E5A2-9F6D-44AC-A13C-6001278C1A7C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Blazor.Templates", "FSharp.Blazor.Templates\FSharp.Blazor.Templates.fsproj", "{92AB14CE-B3CE-49A9-874B-B9FBC2782DFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +21,9 @@ Global
 		{C410E5A2-9F6D-44AC-A13C-6001278C1A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C410E5A2-9F6D-44AC-A13C-6001278C1A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C410E5A2-9F6D-44AC-A13C-6001278C1A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92AB14CE-B3CE-49A9-874B-B9FBC2782DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AB14CE-B3CE-49A9-874B-B9FBC2782DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AB14CE-B3CE-49A9-874B-B9FBC2782DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AB14CE-B3CE-49A9-874B-B9FBC2782DFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

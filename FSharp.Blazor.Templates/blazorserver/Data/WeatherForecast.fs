@@ -1,4 +1,4 @@
-namespace FSharp.Blazor.Example.Data
+namespace FSharp.Blazor.Template.Data
 
 open System
 

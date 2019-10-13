@@ -1,11 +1,11 @@
-namespace FSharp.Blazor.Example.Pages
+namespace FSharp.Blazor.Template.Pages
 
 open System
 open System.Threading.Tasks
 open Microsoft.AspNetCore.Components
 open FSharp.Blazor.Html
 open FSharp.Blazor
-open FSharp.Blazor.Example.Data
+open FSharp.Blazor.Template.Data
 
 [<Route("/fetchdata")>]
 type FetchData() =
