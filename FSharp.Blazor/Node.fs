@@ -51,6 +51,7 @@ type Node =
     | Match of unionType: Type * value: obj * node: Node
     /// A list of similarly structured fragments.
     | ForEach of list<Node>
+    | ComponentInstance of RenderFragment
 
     static member BlazorComponent<'T when 'T :> IComponent>(attrs, children) =
         Node.Component(typeof<'T>, attrs, children)

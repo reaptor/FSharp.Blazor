@@ -5,11 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Components\Counter.fs" />
-    <Compile Include="Components\Index.fs" />
-    <Compile Include="Components\404.fs" />
-    <Compile Include="Components\App.fs" />
-    <Compile Include="Components\Host.fs" />
+    <Folder Include="wwwroot/*" />
+    <Compile Include="Data\WeatherForecast.fs" />
+    <Compile Include="Data\WeatherForecastService.fs" />
+    <Compile Include="Shared\NavMenu.fs" />
+    <Compile Include="Shared\MainLayout.fs" />
+    <Compile Include="Pages\FetchData.fs" />
+    <Compile Include="Pages\Counter.fs" />
+    <Compile Include="Pages\Index.fs" />
+    <Compile Include="Pages\App.fs" />
+    <Compile Include="_Host.fs" />
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

@@ -7,9 +7,12 @@ open Microsoft.AspNetCore.Components
 open FSharp.Blazor
 open FSharp.Blazor.Html
 
-let appAssembly assembly = "AppAssembly" => assembly
+let appAssembly<'a> = "AppAssembly" => typeof<'a>.Assembly
 let found (f : RouteData -> Node) = "Found" => f
 let notFound (f : unit -> Node) = "NotFound" => f
+let routeData routeData = "RouteData" => routeData
+let defaultLayout<'a when 'a :> LayoutComponent> = "DefaultLayout" => typeof<'a>
+let layout<'a when 'a :> LayoutComponent> = "Layout" => typeof<'a>
 
 type Router() =
     inherit Component()
@@ -23,7 +26,7 @@ type Router() =
     [<Parameter>]
     member val NotFound : (unit -> Node) = fun () -> failwith "Property NotFound must be set" with get, set
 
-    override this.Render () =
+    override this.Render () = [
         comp<Microsoft.AspNetCore.Components.Routing.Router> [
             "AppAssembly" => this.AppAssembly
             "Found" => RenderFragment<RouteData>(fun (routeData : RouteData) ->
@@ -36,3 +39,4 @@ type Router() =
                 |> Render.RenderNodeWithSequence this rb 0 (Dictionary())
                 )
         ] []
+    ]

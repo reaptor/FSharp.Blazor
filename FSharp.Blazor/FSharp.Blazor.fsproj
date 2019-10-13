@@ -11,6 +11,7 @@
         <Compile Include="Html.fs" />
         <Compile Include="Render.fs" />
         <Compile Include="Component.fs" />
+        <Compile Include="LayoutComponent.fs" />
         <Compile Include="App.fs" />
         <Compile Include="Router.fs" />
         <Compile Include="FSharpBlazorMiddleware.fs" />

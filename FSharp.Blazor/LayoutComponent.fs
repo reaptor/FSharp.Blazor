@@ -6,8 +6,8 @@ open FSharp.Blazor
 open FSharp.Blazor.Render
 
 [<AbstractClass>]
-type Component() =
-    inherit ComponentBase()
+type LayoutComponent() =
+    inherit LayoutComponentBase()
 
     let matchCache = Dictionary()
 

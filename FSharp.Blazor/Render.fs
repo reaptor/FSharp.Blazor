@@ -151,6 +151,10 @@ let rec renderNode (currentComp: obj) (builder: RenderTreeBuilder) (matchCache: 
             builder.AddAttribute(sequence, "ChildContent", frag)
         builder.CloseComponent()
         sequence + (if hasChildren then 2 else 0)
+    | ComponentInstance renderFragment ->
+        builder.AddContent(sequence, renderFragment)
+        sequence + 1
+
 
 
 /// Render a list of attributes into `builder` at `sequence` number.
@@ -162,10 +166,6 @@ and renderAttrs currentComp builder sequence attrs =
         ||> List.fold (fun (sequence, ref, key) attr ->
             match attr with
             | Attr (name, value) ->
-//                if value :? MulticastDelegate
-//                then
-//                    builder.AddAttribute(sequence, name, value :?> MulticastDelegate)
-//                else
                 builder.AddAttribute(sequence, name, value)
                 (sequence + 1, ref, key)
             | Attrs attrs ->

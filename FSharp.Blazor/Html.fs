@@ -60,6 +60,10 @@ let forEach<'T> (items: seq<'T>) (mkNode: 'T -> Node) =
 let comp<'T when 'T :> IComponent> attrs children =
     Node.BlazorComponent<'T>(attrs, children)
 
+/// Create a fragment from a Blazor component.
+let compInstance renderFragment =
+    Node.ComponentInstance(renderFragment)
+
 /// Create a navigation link which toggles its `active` class
 /// based on whether the current URI matches its `href`.
 let navLink (``match``: Routing.NavLinkMatch) attrs children =
@@ -628,6 +632,8 @@ module attr =
 
     /// Create an HTML `async` attribute.
     let async (v: obj) : Attr = "async" => v
+
+    let ``aria-hidden`` (v: bool) : Attr = "aria-hidden" => v
 
     /// Create an HTML `autocapitalize` attribute.
     let autocapitalize (v: obj) : Attr = "autocapitalize" => v

@@ -1,7 +1,6 @@
 module FSharp.Blazor.App
 
 open System.IO
-open System.Collections.Generic
 open System.Text.Encodings.Web
 open FSharp.Control.Tasks.V2.ContextInsensitive
 open Microsoft.Extensions.DependencyInjection
@@ -10,7 +9,6 @@ open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Mvc.Rendering
 open Microsoft.AspNetCore.Mvc.ViewFeatures
 open FSharp.Blazor
-open FSharp.Blazor.Render
 
 let private renderComponentToStringAsync<'a when 'a :> IComponent>(httpContext : HttpContext) =
     let html = httpContext.RequestServices.GetService<IHtmlHelper>()
