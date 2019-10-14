@@ -1333,52 +1333,55 @@ module on =
 // END EVENTS
 
 /// Two-way binding for HTML input elements.
-module bind =
 
-    let private attr<'T, 'U> (valueName: string) (eventName: string) (value: 'T) (callback: 'U -> unit) =
-        Attrs [
-            valueName => value
-            on.event eventName (fun (e: ChangeEventArgs) ->
-                callback (unbox<'U> e.Value))
-        ]
+let bind x = Attr ("@bind", x)
 
-    let inline private attrParseValue< ^T when ^T : (static member TryParse : string * byref< ^T> -> bool)>
-            (eventName: string) (value: ^T) (callback: ^T -> unit) =
-        attr< ^T, string> "value" eventName value (fun s ->
-            let mutable out = Unchecked.defaultof< ^T>
-            if (^T : (static member TryParse : string * byref< ^T> -> bool)(s, &out))
-            then callback out)
+// module bind =
 
-    /// Bind a boolean to the value of a checkbox.
-    let ``checked`` (value: bool) (callback: bool -> unit) =
-        attr<bool, bool> "checked" "change" value callback
+//     let private attr<'T, 'U> (valueName: string) (eventName: string) (value: 'T) (callback: 'U -> unit) =
+//         Attrs [
+//             valueName => value
+//             on.event eventName (fun (e: ChangeEventArgs) ->
+//                 callback (unbox<'U> e.Value))
+//         ]
 
-    /// Bind a string to the value of an input.
-    /// The value is updated on the oninput event.
-    let input (value: string) (callback: string -> unit) =
-        attr<string, string> "value" "input" value callback
+//     let inline private attrParseValue< ^T when ^T : (static member TryParse : string * byref< ^T> -> bool)>
+//             (eventName: string) (value: ^T) (callback: ^T -> unit) =
+//         attr< ^T, string> "value" eventName value (fun s ->
+//             let mutable out = Unchecked.defaultof< ^T>
+//             if (^T : (static member TryParse : string * byref< ^T> -> bool)(s, &out))
+//             then callback out)
 
-    /// Bind a string to the value of an input.
-    /// The value is updated on the onchange event.
-    let change (value: string) (callback: string -> unit) =
-        attr<string, string> "value" "change" value callback
+//     /// Bind a boolean to the value of a checkbox.
+//     let ``checked`` (value: bool) (callback: bool -> unit) =
+//         attr<bool, bool> "checked" "change" value callback
 
-    /// Bind an integer to the value of an input.
-    /// The value is updated on the oninput event.
-    let inputInt (value: int) (callback: int -> unit) =
-        attrParseValue<int> "input" value callback
+//     /// Bind a string to the value of an input.
+//     /// The value is updated on the oninput event.
+//     let input (value: string) (callback: string -> unit) =
+//         attr<string, string> "value" "input" value callback
 
-    /// Bind an integer to the value of an input.
-    /// The value is updated on the onchange event.
-    let changeInt (value: int) (callback: int -> unit) =
-        attrParseValue<int> "change" value callback
+//     /// Bind a string to the value of an input.
+//     /// The value is updated on the onchange event.
+//     let change (value: string) (callback: string -> unit) =
+//         attr<string, string> "value" "change" value callback
 
-    /// Bind a float to the value of an input.
-    /// The value is updated on the oninput event.
-    let inputFloat (value: float) (callback: float -> unit) =
-        attrParseValue<float> "input" value callback
+//     /// Bind an integer to the value of an input.
+//     /// The value is updated on the oninput event.
+//     let inputInt (value: int) (callback: int -> unit) =
+//         attrParseValue<int> "input" value callback
 
-    /// Bind a float to the value of an input.
-    /// The value is updated on the onchange event.
-    let changeFloat (value: float) (callback: float -> unit) =
-        attrParseValue<float> "change" value callback
+//     /// Bind an integer to the value of an input.
+//     /// The value is updated on the onchange event.
+//     let changeInt (value: int) (callback: int -> unit) =
+//         attrParseValue<int> "change" value callback
+
+//     /// Bind a float to the value of an input.
+//     /// The value is updated on the oninput event.
+//     let inputFloat (value: float) (callback: float -> unit) =
+//         attrParseValue<float> "input" value callback
+
+//     /// Bind a float to the value of an input.
+//     /// The value is updated on the onchange event.
+//     let changeFloat (value: float) (callback: float -> unit) =
+//         attrParseValue<float> "change" value callback
