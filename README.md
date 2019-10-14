@@ -1,5 +1,7 @@
 # Introduction
-FSharp.Blazor is a thin F# layer on top of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor). It enables you to write your Blazor views and logic in F#. This project is inspired by and based on the great work of [Bolero](https://fsbolero.io). The main difference is that Bolero uses the Elmish programming model while FSharp.Blazor uses the same programming model as Blazor.
+FSharp.Blazor is a thin F# layer on top of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) that enables you to write your Blazor views and logic in F#.
+
+The project is inspired by and based on the great work of [Bolero](https://fsbolero.io). The main differences is that Bolero uses the Elmish programming model while FSharp.Blazor uses the same programming model as Blazor. Bolero also has a focus towards the [client-side hosting model](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-3.0#blazor-webassembly) while FSharp.Blazor focuses on the [server-side hosting model](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-3.0#blazor-server)
 
 # Getting started
 Install [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download)
@@ -19,11 +21,9 @@ Build and run
 cd MyApp && dotnet run
 ```
 
-[Learn more about Blazor (C#)](https://docs.microsoft.com/en-us/aspnet/core/blazor/)
+# Creating a Blazor Component
 
-# Creating a Component
-
-Create Blazor components in plain F#. The ```Component``` type is defined in the module ```FSharp.Blazor```.
+You can create plain Blazor components by inheriting from the ```Component``` from thenamespace ```FSharp.Blazor```.
 
 ```fsharp
 open FSharp.Blazor
@@ -32,9 +32,30 @@ type MyComponent() =
     inherit Component()
 
     override this.Render() = [
-        // HTML view
+        div [] [text "Hello, world!"]
     ]
 ```
+
+To add parameters to the component, use a property with the ```Parameter``` attribute from namespace ```Microsoft.AspNetCore.Blazor```.
+
+```fsharp
+type MyComponent() =
+    inherit Component()
+
+    [<Parameter>]
+    member val Who = "" with get, set
+
+    override this.Render() = [
+        div [] [text (sprintf "Hello, %s!" this.Who)]
+    ]
+```
+
+To instantiate a Blazor component, use the ```comp``` function. It is parameterized by the component type, and takes attributes and child nodes as arguments.
+
+```fsharp
+let myElement =
+    comp<MyComponent> ["Who" => "world"] []
+````
 
 ## Requiring a dependency
 
@@ -57,7 +78,7 @@ type MyComponent() =
 
 ## Providing a dependency
 
-Dependencies are injected from the client-side ```Startup``` class's ```ConfigureServices``` method:
+Dependencies are injected from the ```Startup``` class's ```ConfigureServices``` method:
 
 ```fsharp
 type Startup() =
