@@ -26,7 +26,7 @@ type Router() =
     [<Parameter>]
     member val NotFound : (unit -> Node) = fun () -> failwith "Property NotFound must be set" with get, set
 
-    override this.Render () = [
+    override this.Render () =
         comp<Microsoft.AspNetCore.Components.Routing.Router> [
             "AppAssembly" => this.AppAssembly
             "Found" => RenderFragment<RouteData>(fun (routeData : RouteData) ->
@@ -39,4 +39,3 @@ type Router() =
                 |> Render.RenderNodeWithSequence this rb 0 (Dictionary())
                 )
         ] []
-    ]
