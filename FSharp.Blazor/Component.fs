@@ -14,8 +14,7 @@ type Component() =
     override this.BuildRenderTree(builder) =
         base.BuildRenderTree(builder)
         this.Render()
-        |> Node.ForEach
         |> RenderNode this builder matchCache
 
-    abstract Render : unit -> Node list
+    abstract Render : unit -> Node
 

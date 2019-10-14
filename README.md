@@ -31,9 +31,8 @@ open FSharp.Blazor
 type MyComponent() =
     inherit Component()
 
-    override this.Render() = [
+    override this.Render() =
         div [] [text "Hello, world!"]
-    ]
 ```
 
 To add parameters to the component, use a property with the ```Parameter``` attribute from namespace ```Microsoft.AspNetCore.Blazor```.
@@ -45,9 +44,8 @@ type MyComponent() =
     [<Parameter>]
     member val Who = "" with get, set
 
-    override this.Render() = [
+    override this.Render() =
         div [] [text (sprintf "Hello, %s!" this.Who)]
-    ]
 ```
 
 To instantiate a Blazor component, use the ```comp``` function. It is parameterized by the component type, and takes attributes and child nodes as arguments.
@@ -67,13 +65,12 @@ open FSharp.Blazor
 
 type MyComponent() =
     inherit Component()
-    
+
     [<Inject>]
     member val MyDependency = Unchecked.defaultof<IMyDependency> with get, set
-    
-    override this.Render() = [
+
+    override this.Render() =
         // doSomethingWith this.MyDependency
-    ]
 ```
 
 ## Providing a dependency
